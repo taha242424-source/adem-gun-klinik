@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="tr" data-theme="beige">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dt. Adem Gün | Erzincan İleri Diş Hekimliği & 3D İmplantoloji</title>
+  
+  <!-- SEO & Authority Meta Tags -->
+  <meta name="description" content="Dt. Adem Gün Diş Kliniği Erzincan. Bilgisayarlı 3D implant planlama, zirkonyum kaplama, dijital gülüş tasarımı ve ağrısız çene cerrahisi.">
+  <meta name="keywords" content="Erzincan Diş Hekimi, Dt. Adem Gün, Erzincan İmplant, Zirkonyum Kaplama, Gülüş Tasarımı Erzincan, 3D Tomografi Diş">
+  <meta name="author" content="Dt. Adem Gün">
+  <link rel="canonical" href="https://drademgun.com">
+
+  <!-- Open Graph / High-End Social Sharing -->
+  <meta property="og:title" content="Dt. Adem Gün | İleri İmplantoloji & Estetik Diş Kliniği">
+  <meta property="og:description" content="Bilimsel hassasiyet ve estetik mükemmeliyet. 3D implant simülasyonu ve dijital gülüş tasarımı.">
+  <meta property="og:image" content="assets/1000526973.PNG">
+  <meta property="og:type" content="website">
+
+  <!-- Google Fonts: Outfit, Plus Jakarta Sans, Space Grotesk -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Immediate Theme Engine (Always Starts in Beige Mode) -->
+  <script>
+    (function() {
+      document.documentElement.setAttribute('data-theme', 'beige');
+      try { localStorage.setItem('dt_adem_theme', 'beige'); } catch(e) {}
+    })();
+  </script>
+
+  <!-- JSON-LD Structured Data (Dentist Schema) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Dentist",
+    "name": "Özel Diş Hekimi Adem Gün Kliniği",
+    "image": "assets/1000526973.PNG",
+    "telephone": "+905333902924",
+    "url": "https://drademgun.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Hocabey Mah. 1008. Sk. TB-10 41 CA",
+      "addressLocality": "Merkez",
+      "addressRegion": "Erzincan",
+      "postalCode": "24000",
+      "addressCountry": "TR"
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+      "opens": "09:00",
+      "closes": "19:00"
+    },
+    "sameAs": ["https://www.instagram.com/dt.ademgn/"],
+    "priceRange": "$$"
+  }
+  </script>
+
+  <!-- External High-Performance Libraries -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+</head>
+<body>
+
+  <!-- Ambient Cinematic Overlays -->
+  <div class="bg-noise" aria-hidden="true"></div>
+  <div class="bg-medical-grid" aria-hidden="true"></div>
+  <canvas id="ambient-cosmos-canvas" aria-hidden="true"></canvas>
+
+  <!-- Ambient Cosmic-Crystal Floating Artifact -->
+  <div class="crystal-floating-wrap" aria-hidden="true">
+    <div class="crystal-tooth-img"></div>
+  </div>
+
+  <!-- 1. Floating Glass Pill Navigation -->
+  <nav class="dental-nav" aria-label="Ana Menü">
+    <a href="#hero" class="brand-logo-wrap magnetic-btn">
+      <img src="assets/logo_transparent.png" alt="Dt. Adem Gün Logo" class="brand-logo-img">
+      <div class="brand-text">
+        <span>ADEM GÜN</span>
+        <span class="brand-sub">DİŞ HEKİMİ & İMPLANTOLOJİ</span>
+      </div>
+    </a>
+
+    <div class="nav-links">
+      <a href="#hero" class="nav-link">Ana Sayfa</a>
+      <a href="#implant-story-section" class="nav-link">İmplant</a>
+      <a href="#tedaviler" class="nav-link">Tedaviler</a>
+      <a href="#akademik" class="nav-link">Akademik</a>
+      <a href="#klinik" class="nav-link">Kliniğimiz</a>
+      <a href="#iletisim" class="nav-link">İletişim</a>
+    </div>
+
+    <div class="nav-actions">
+      <!-- Luxury Dual Theme Switcher (Beige / Dark) -->
+      <button id="theme-toggle-btn" class="theme-toggle-btn magnetic-btn" title="Temayı Değiştir (Sıcak Bej / Koyu Lüks)" aria-label="Temayı Değiştir">
+        <span class="theme-icon-wrap theme-icon-moon">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </span>
+        <span class="theme-icon-wrap theme-icon-sun" style="display: none;">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+        </span>
+        <span class="theme-toggle-text">Koyu Mod</span>
+      </button>
+
+      <!-- Online Appointment Trigger -->
+      <button class="btn-beam magnetic-btn" data-modal-open="appointment-modal" style="padding: 0.65rem 1.45rem; font-size: 0.88rem; white-space: nowrap;">
+        <span>✦ Randevu Al</span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- 2. Hero Section: Cinematic Awwwards Level Experience -->
+  <header id="hero" class="dental-hero">
+    <div class="hero-text-col">
+      <div class="hero-reveal hero-pill-status">
+        <span class="pulse-dot-green"></span>
+        <span style="font-size: 0.8rem; font-weight: 700; letter-spacing: 0.08em; color: var(--text-primary); text-transform: uppercase;">
+          ERZİNCAN KLİNİĞİ • CANLI DİJİTAL RANDEVU AÇIK
+        </span>
+      </div>
+
+      <h1 class="hero-reveal hero-grand-title">
+        Gülüşünüzde <br>
+        <span class="text-gradient-cyan">Bilim & Estetiğin</span> <br>
+        Kusursuz Uyumu
+      </h1>
+
+      <p class="hero-reveal hero-subtitle">
+        Dt. Adem Gün Kliniği'nde en son teknoloji 3D dijital tomografi, medikal titanyum implantoloji ve bilgisayarlı CAD/CAM gülüş tasarımını bilimsel uzmanlıkla birleştiriyoruz.
+      </p>
+
+      <div class="hero-reveal hero-cta-group">
+        <button class="btn-beam magnetic-btn" data-modal-open="appointment-modal">
+          <span>📅 Online Randevu Oluştur</span>
+        </button>
+        <a href="https://wa.me/905333902924?text=Merhaba%20Dt.%20Adem%20G%C3%BCn%20Klini%C4%9Fi,%20tedavi%20ve%20randevu%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" class="btn-glass-secondary magnetic-btn">
+          <span>💬 WhatsApp Danışma</span>
+        </a>
+      </div>
+
+
+    </div>
+
+    <!-- Hero Hologram & 3D Scan Viewport Frame -->
+    <div class="hero-visual-col hero-reveal">
+      <div class="hologram-glass-frame tilt-card">
+        <!-- Reticle corners -->
+        <div class="hud-reticle-tl"></div>
+        <div class="hud-reticle-tr"></div>
+        <div class="hud-reticle-bl"></div>
+        <div class="hud-reticle-br"></div>
+
+        <!-- Doctor Portrait Ring (Dt. Adem Gün) -->
+        <div class="hologram-avatar-circle">
+          <img src="assets/1000526975.JPG" alt="Dt. Adem Gün - İmplantoloji & Çene Cerrahisi Uzmanı" class="hologram-avatar-img">
+        </div>
+
+        <h3 style="font-family: var(--font-display); font-size: 1.5rem; font-weight: 800; color: var(--text-primary); margin-bottom: 0.35rem; text-align: center;">Dt. Adem Gün</h3>
+        <p style="color: var(--accent-cyan); font-size: 0.92rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; text-align: center; margin-bottom: 1.25rem;">İmplant & Estetik Diş Hekimliği</p>
+
+        <div style="display: flex; gap: 0.6rem; flex-wrap: wrap; justify-content: center;">
+          <span class="tag-pill">✦ 3D Dijital Planlama</span>
+          <span class="tag-pill">✦ Ağrısız Cerrahi</span>
+          <span class="tag-pill">✦ Zirkonyum CAD/CAM</span>
+        </div>
+
+        <!-- Floating Telemetry Badges -->
+        <div class="hud-telemetry-badge badge-top-left">
+          <span style="display: inline-block; width: 10px; height: 10px; border-radius: 50%; background: var(--accent-cyan); box-shadow: 0 0 10px var(--accent-cyan);"></span>
+          <div>
+            <div style="font-size: 0.72rem; color: var(--text-muted); font-weight: 600;">HASSASİYET</div>
+            <div style="font-size: 0.85rem; color: var(--text-primary); font-weight: 700;">±5 Mikron CAD/CAM</div>
+          </div>
+        </div>
+
+        <div class="hud-telemetry-badge badge-bottom-right">
+          <span style="font-size: 1.1rem;">💎</span>
+          <div>
+            <div style="font-size: 0.72rem; color: var(--text-muted); font-weight: 600;">MATERYAL</div>
+            <div style="font-size: 0.85rem; color: var(--text-primary); font-weight: 700;">Medikal Grade-5 Titanyum</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- 3. INTERACTIVE SURGICAL & IMPLANT RECONSTRUCTION STAGE -->
+  <section id="implant-story-section" class="story-section">
+    <div class="section-header-center" style="margin-bottom: 3.5rem;">
+      <span class="badge-editorial">CERRAHİ & BİYOMEKANİK PROTOKOL</span>
+      <h2 class="section-title">Adım Adım İmplant Tedavi Rehberi</h2>
+      <p class="section-desc">Mikrometre hassasiyetindeki 3D dijital analizden ömür boyu kalıcı doğal gülüşe uzanan 5 aşamalı cerrahi sürecimiz.</p>
+      
+      <!-- Medical Ethics & Informational Disclaimer -->
+      <div class="medical-disclaimer-note">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"></circle>
+          <line x1="12" y1="16" x2="12" y2="12"></line>
+          <line x1="12" y1="8" x2="12.01" y2="8"></line>
+        </svg>
+        <span>Tedavi rehberinde ve bilgilendirme kartlarında yer alan görsel materyaller yalnızca hastaları bilgilendirme amaçlı olup, reklam veya ticari yönlendirme amacı taşımamaktadır.</span>
+      </div>
+    </div>
+
+    <div class="story-sticky-wrapper">
+      
+      <!-- Mobile Interactive Stage Tabs Dock (Visible on Mobile/Tablet) -->
+      <div class="mobile-stage-tabs-dock">
+        <button class="mobile-stage-tab active" data-stage="0" type="button">
+          <span class="tab-num">01</span>
+          <span class="tab-txt">Anatomi</span>
+        </button>
+        <button class="mobile-stage-tab" data-stage="1" type="button">
+          <span class="tab-num">02</span>
+          <span class="tab-txt">3D Tarama</span>
+        </button>
+        <button class="mobile-stage-tab" data-stage="2" type="button">
+          <span class="tab-num">03</span>
+          <span class="tab-txt">İmplant</span>
+        </button>
+        <button class="mobile-stage-tab" data-stage="3" type="button">
+          <span class="tab-num">04</span>
+          <span class="tab-txt">Zirkonyum</span>
+        </button>
+        <button class="mobile-stage-tab" data-stage="4" type="button">
+          <span class="tab-num">05</span>
+          <span class="tab-txt">Gülüş</span>
+        </button>
+      </div>
+
+      <!-- Interactive Cinematic Visual Stage Column -->
+      <div class="story-visual-col">
+        <div class="stage-screen-frame tilt-card">
+          <!-- Frame HUD Header -->
+          <div class="stage-hud-header">
+            <div class="hud-pill">
+              <span class="pulse-dot-green"></span>
+              <span id="stage-hud-step-title">AŞAMA 01 / ANATOMİ</span>
+            </div>
+            <div class="hud-pill">
+              <span id="stage-hud-telemetry">HASSASİYET: 3D DİJİTAL MİKRON</span>
+            </div>
+          </div>
+
+          <!-- Dynamic Active Stage Image Display -->
+          <div class="stage-image-display-wrap">
+            <img id="stage-display-img" src="assets/stage1_natural_tooth.jpg" alt="Aşama 01: Doğal Diş Biyomekaniği" class="stage-display-image">
+            <div class="stage-image-overlay-glow"></div>
+            <div class="hud-reticle-tl"></div>
+            <div class="hud-reticle-tr"></div>
+            <div class="hud-reticle-bl"></div>
+            <div class="hud-reticle-br"></div>
+          </div>
+
+          <!-- Stage Telemetry Footer -->
+          <div class="stage-hud-footer">
+            <div>
+              <span class="hud-footer-label">MATERYAL & METODOLOJİ</span>
+              <h4 id="stage-footer-material" class="hud-footer-val">Doğal Mine & Çift Kök Mimarisi</h4>
+            </div>
+            <div style="text-align: right;">
+              <span class="hud-footer-label">KLİNİK HEDEF</span>
+              <h4 id="stage-footer-goal" class="hud-footer-val" style="color: var(--accent-cyan);">Maksimum Doku Korunumu</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Synchronized 5-Step Interactive Story Cards -->
+      <div class="story-text-col">
+        <div class="story-card-step active" data-stage="0">
+          <div class="step-num-badge">
+            <span style="color: var(--accent-cyan);">✦ AŞAMA 01</span>
+            <span>/ ANATOMİ</span>
+          </div>
+          <h3>Doğal Diş Biyomekaniği & Mine</h3>
+          <p>
+            Doğal diş; dış mine tabakası, iç dentin yapısı ve çene kemiğine tutunan çift kök mimarisiyle kusursuz bir biyomekanik şaheserdir. İlk hedefimiz daima doğal dişi korumaktır.
+          </p>
+        </div>
+
+        <div class="story-card-step" data-stage="1">
+          <div class="step-num-badge">
+            <span style="color: var(--accent-cyan);">✦ AŞAMA 02</span>
+            <span>/ ANALİZ</span>
+          </div>
+          <h3>3D Tomografi & Kemik Haritası</h3>
+          <p>
+            Diş kaybı sonrasında oluşan kemik rezorpsiyonu, düşük dozlu 3D tomografi ile mikrometre hassasiyetinde taranır ve implantın yerleşeceği en ideal cerrahi açı belirlenir.
+          </p>
+        </div>
+
+        <div class="story-card-step" data-stage="2">
+          <div class="step-num-badge">
+            <span style="color: var(--accent-cyan);">✦ AŞAMA 03</span>
+            <span>/ CERRAHİ</span>
+          </div>
+          <h3>Titanyum İmplant & Osseointegrasyon</h3>
+          <p>
+            Saf medikal titanyum vida, özel mikro-yivleriyle çene kemiğine yerleştirilir. Kemik dokusu titanyum ile hücresel düzeyde kaynaşarak sarsılmaz bir kök oluşturur.
+          </p>
+        </div>
+
+        <div class="story-card-step" data-stage="3">
+          <div class="step-num-badge">
+            <span style="color: var(--accent-cyan);">✦ AŞAMA 04</span>
+            <span>/ RESTORASYON</span>
+          </div>
+          <h3>Zirkonyum Abutment & Kuron Montajı</h3>
+          <p>
+            Titanyum vida üzerine oturan biyolojik abutment ve CAD/CAM ile üretilen ışık geçirgen zirkonyum kuron takılır. Doğal dişten ayırt edilemez bir estetik yakalanır.
+          </p>
+        </div>
+
+        <div class="story-card-step" data-stage="4">
+          <div class="step-num-badge">
+            <span style="color: var(--accent-cyan);">✦ AŞAMA 05</span>
+            <span>/ SONUÇ</span>
+          </div>
+          <h3>Ömür Boyu Çiğneme Gücü & Parlayan Gülüş</h3>
+          <p>
+            Tedavisi tamamlanan hastamız, kendi doğal dişinin sağladığı maksimum çiğneme kuvvetine ve özgüven dolu parlak bir gülümsemeye kavuşur.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 4. TEDAVİLER & UZMANLIK ALANLARI (BENTO GRID 2.0) -->
+  <section id="tedaviler" class="bento-section">
+    <div class="section-header-center">
+      <span class="badge-editorial">KLİNİK UZMANLIK ALANLARI</span>
+      <h2 class="section-title">Gülüşünüz İçin İleri Teknoloji Tedavi Çözümleri</h2>
+      <p class="section-desc">Kliniğimizde gerçekleştirilen her cerrahi ve estetik müdahale uluslararası tıp standartlarında, sterilizasyon protokolleriyle icra edilir.</p>
+    </div>
+
+    <div class="bento-grid">
+      <!-- Card 1: İmplantoloji (Span 8) -->
+      <div class="bento-col-8 bento-card-lux tilt-card">
+        <div>
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1.25rem;">
+            <div class="bento-icon-box" style="background: rgba(0, 144, 168, 0.1); color: var(--accent-cyan); border-color: rgba(0, 144, 168, 0.25);">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2v20M8 5h8M7 9h10M8 13h8M9 17h6M11 21h2"/>
+              </svg>
+            </div>
+            <span class="tag-pill" style="border-color: var(--accent-cyan); color: var(--accent-cyan); font-weight: 700;">A+ Sınıfı Titanyum</span>
+          </div>
+          <h3 class="bento-card-title" style="font-size: 1.45rem;">İmplantoloji & İleri Çene Cerrahisi</h3>
+          <p class="bento-card-text">
+            Tek diş eksikliğinden tam çene dişsizlik vakalarına kadar; sinüs lifting, kemik tozu augmentasyonu ve dikişsiz kapalı cerrahi teknikleriyle ömür boyu kalıcı implant çözümleri sunuyoruz.
+          </p>
+        </div>
+        <div class="tag-cloud">
+          <span class="tag-pill">✦ All-on-4 / All-on-6</span>
+          <span class="tag-pill">✦ Sinüs Lifting</span>
+          <span class="tag-pill">✦ Kemik Greftleme</span>
+          <span class="tag-pill">✦ Dikişsiz Cerrahi</span>
+          <span class="tag-pill">✦ 3D Cerrahi Rehber</span>
+        </div>
+      </div>
+
+      <!-- Card 2: Zirkonyum Kaplama (Span 4) -->
+      <div class="bento-col-4 bento-card-lux tilt-card">
+        <div>
+          <div class="bento-icon-box" style="background: rgba(99, 102, 241, 0.12); color: #818cf8; border-color: rgba(99, 102, 241, 0.3);">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M6 3h12l4 6-10 12L2 9l4-6z"/>
+              <path d="M11 3L8 9l4 12 4-12-3-6"/>
+            </svg>
+          </div>
+          <h3 class="bento-card-title">Zirkonyum & Porselen Kaplama</h3>
+          <p class="bento-card-text">
+            Yüksek biyouyumluluk ve ışık geçirgenliği ile diş eti morarması yapmayan, doğal mine dokusunu birebir taklit eden estetik restorasyonlar.
+          </p>
+        </div>
+        <div class="tag-cloud">
+          <span class="tag-pill">✦ E-Max Kaplama</span>
+          <span class="tag-pill">✦ CAD/CAM Blok</span>
+        </div>
+      </div>
+
+      <!-- Card 3: Hollywood Smile (Span 4) -->
+      <div class="bento-col-4 bento-card-lux tilt-card">
+        <div>
+          <div class="bento-icon-box" style="background: rgba(229, 184, 92, 0.12); color: var(--accent-gold); border-color: rgba(229, 184, 92, 0.3);">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+            </svg>
+          </div>
+          <h3 class="bento-card-title">Hollywood Smile Tasarımı</h3>
+          <p class="bento-card-text">
+            Yüz simetrinize, dudak hattınıza ve ten tonunuza özel bilgisayarlı dijital gülüş planlaması ve ultra-ince porselen lamine (yaprak porselen) uygulamaları.
+          </p>
+        </div>
+        <div class="tag-cloud">
+          <span class="tag-pill">✦ Yaprak Lamine</span>
+          <span class="tag-pill">✦ Altın Oran Analizi</span>
+        </div>
+      </div>
+
+      <!-- Card 4: Lazerle Diş Beyazlatma (Span 4) -->
+      <div class="bento-col-4 bento-card-lux tilt-card">
+        <div>
+          <div class="bento-icon-box" style="background: rgba(16, 185, 129, 0.12); color: #34d399; border-color: rgba(16, 185, 129, 0.3);">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+            </svg>
+          </div>
+          <h3 class="bento-card-title">Lazerle Diş Beyazlatma (Bleaching)</h3>
+          <p class="bento-card-text">
+            Tek seansta güvenli, diş minesine zarar vermeyen ve hassasiyetsiz klinikte ofis tipi beyazlatma ile 4-6 tona kadar kalıcı ışıltı.
+          </p>
+        </div>
+        <div class="tag-cloud">
+          <span class="tag-pill">✦ Tek Seans</span>
+          <span class="tag-pill">✦ Sıfır Hassasiyet</span>
+        </div>
+      </div>
+
+      <!-- Card 5: Endodonti & Dolgu (Span 4) -->
+      <div class="bento-col-4 bento-card-lux tilt-card">
+        <div>
+          <div class="bento-icon-box" style="background: rgba(244, 63, 94, 0.12); color: #fb7185; border-color: rgba(244, 63, 94, 0.3);">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+          </div>
+          <h3 class="bento-card-title">Kanal Tedavisi & Estetik Dolgu</h3>
+          <p class="bento-card-text">
+            Döner alet teknolojisi ve apeks bulucu cihazlarla tek seansta ağrısız kök kanal tedavileri ve diş renginde estetik kompozit bonding dolgular.
+          </p>
+        </div>
+        <div class="tag-cloud">
+          <span class="tag-pill">✦ Ağrısız Endodonti</span>
+          <span class="tag-pill">✦ Estetik Bonding</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. EDITORIAL CONGRESS & SCIENTIFIC AUTHORITY -->
+  <section id="akademik" class="congress-section">
+    <div style="max-width: 1400px; margin: 0 auto;">
+      <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 4rem; flex-wrap: wrap; gap: 2rem;">
+        <div>
+          <span class="badge-editorial">AKADEMİK VE BİLİMSEL OTORİTE</span>
+          <h2 class="section-title">Kongreler & Bilimsel Vaka Sunumları</h2>
+        </div>
+        <p class="section-desc" style="max-width: 520px;">
+          Dt. Adem Gün, Türkiye'nin önde gelen implantoloji ve estetik diş hekimliği kongrelerinde bilimsel araştırmaları ve vaka sunumlarıyla klinik tecrübesini meslektaşlarıyla paylaşmaktadır.
+        </p>
+      </div>
+
+      <div class="congress-grid">
+        <!-- Congress 1: NucleOSS Zirvede -->
+        <div class="congress-card-editorial tilt-card">
+          <div class="congress-media-frame">
+            <img src="assets/1000520231.JPEG" alt="Dt. Adem Gün NucleOSS Zirvede Sunumu" loading="lazy" style="object-position: center bottom;">
+            <span class="congress-editorial-badge">Ulusal İmplant Zirvesi / Antalya</span>
+          </div>
+          <div class="congress-text-body">
+            <h3 style="font-family: var(--font-display); font-size: 1.45rem; font-weight: 700; margin-bottom: 0.75rem; color: var(--text-primary);">
+              NucleOSS ZİRVEDE — Maksiller Sinüs & İmplant Cerrahisi
+            </h3>
+            <p style="color: var(--text-secondary); font-size: 0.98rem; line-height: 1.65;">
+              Üst çene arka bölgedeki anatomik varyasyonlar (sinüs septaları) ve ileri seviye implant cerrahisinde güvenli cerrahi protokollerin sunulduğu bilimsel oturum.
+            </p>
+          </div>
+        </div>
+
+        <!-- Congress 2: Restorative & Glaze -->
+        <div class="congress-card-editorial tilt-card">
+          <div class="congress-media-frame">
+            <img src="assets/1000537103.JPG" alt="Dt. Adem Gün Restoratif & Glaze Kongresi" loading="lazy">
+            <span class="congress-editorial-badge">Estetik & Restoratif Sempozyumu</span>
+          </div>
+          <div class="congress-text-body">
+            <h3 style="font-family: var(--font-display); font-size: 1.45rem; font-weight: 700; margin-bottom: 0.75rem; color: var(--text-primary);">
+              Mekanik Polisaj, Glaze & Yüzey Bütünlüğü
+            </h3>
+            <p style="color: var(--text-secondary); font-size: 0.98rem; line-height: 1.65;">
+              Zirkonyum ve seramik restorasyonların uzun ömürlülüğü, mekanik parlatma teknikleri ve yüzey mikro-morfolojisinin klinik başarısı üzerine bilimsel vaka sunumu.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. CLINICAL SPATIAL GALLERY -->
+  <section id="klinik" class="spatial-gallery-section">
+    <div class="section-header-center">
+      <span class="badge-editorial">KLİNİK ALTYAPISI & MEKAN TASARIMI</span>
+      <h2 class="section-title">Modern, Konforlu ve Steril Tedavi Ortamı</h2>
+      <p class="section-desc">Erzincan kliniğimiz, hastalarımızın tedavi konforu ve %100 sterilizasyon güvenliği gözetilerek en yeni medikal ünitelerle tasarlanmıştır.</p>
+    </div>
+
+    <div class="spatial-gallery-grid">
+      <!-- Tile 1 (Span 7) -->
+      <div class="gallery-tile-lux tilt-card" style="grid-column: span 7; height: 420px;">
+        <img src="assets/IMG_2081.jpeg" alt="Dijital Cerrahi Tedavi Ünitesi" loading="lazy" decoding="async">
+        <div class="gallery-tile-caption">
+          <div>
+            <h4 style="color: #fff; font-size: 1.3rem; font-weight: 700; font-family: var(--font-display);">Klinik 1 — Dijital Cerrahi Ünitesi</h4>
+            <p style="color: var(--accent-cyan); font-size: 0.9rem; font-weight: 500;">Entegre Monitörlü Cerrahi Koltuk</p>
+          </div>
+          <span class="gallery-pill-cyan">✦ HD Teknoloji</span>
+        </div>
+      </div>
+
+      <!-- Tile 2 (Span 5) -->
+      <div class="gallery-tile-lux tilt-card" style="grid-column: span 5; height: 420px;">
+        <img src="assets/IMG_2083.jpeg" alt="Estetik Restorasyon Odası" loading="lazy" decoding="async">
+        <div class="gallery-tile-caption">
+          <div>
+            <h4 style="color: #fff; font-size: 1.3rem; font-weight: 700; font-family: var(--font-display);">Klinik 2 — Estetik Uygulama Odası</h4>
+            <p style="color: var(--accent-cyan); font-size: 0.9rem; font-weight: 500;">Özel Aydınlatmalı Steril Ünite</p>
+          </div>
+          <span class="gallery-pill-emerald">✦ %100 Hijyen</span>
+        </div>
+      </div>
+
+      <!-- Tile 3 (Span 4) -->
+      <div class="gallery-tile-lux tilt-card" style="grid-column: span 4; height: 340px;">
+        <img src="assets/IMG_2085.jpeg" alt="VIP Bekleme Salonu" loading="lazy" decoding="async">
+        <div class="gallery-tile-caption">
+          <div>
+            <h4 style="color: #fff; font-size: 1.15rem; font-weight: 700;">VIP Bekleme & Resepsiyon</h4>
+            <p style="color: var(--accent-cyan); font-size: 0.85rem;">Ferah & Konforlu Atmosfer</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tile 4 (Span 4) -->
+      <div class="gallery-tile-lux tilt-card" style="grid-column: span 4; height: 340px;">
+        <img src="assets/IMG_2084.jpeg" alt="Klinik Koridoru" loading="lazy" decoding="async">
+        <div class="gallery-tile-caption">
+          <div>
+            <h4 style="color: #fff; font-size: 1.15rem; font-weight: 700;">Poliklinik Koridoru</h4>
+            <p style="color: var(--accent-cyan); font-size: 0.85rem;">İzole Tedavi Odaları</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tile 5 (Span 4) -->
+      <div class="gallery-tile-lux tilt-card" style="grid-column: span 4; height: 340px;">
+        <img src="assets/IMG_2086.jpeg" alt="Klinik Dış Cephe Erzincan" loading="lazy" decoding="async">
+        <div class="gallery-tile-caption">
+          <div>
+            <h4 style="color: #fff; font-size: 1.15rem; font-weight: 700;">Klinik Giriş & Ulaşım</h4>
+            <p style="color: var(--accent-cyan); font-size: 0.85rem;">Hocabey Mah. Erzincan</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. FREQUENTLY ASKED QUESTIONS (LUXURY ACCORDION) -->
+  <section class="faq-section">
+    <div class="section-header-center">
+      <span class="badge-editorial">KLİNİK REHBERİ</span>
+      <h2 class="section-title">Sıkça Sorulan Sorular</h2>
+      <p class="section-desc">Tedavi süreçleri, anestezi konforu ve iyileşme aşamaları hakkında merak ettiğiniz tüm detaylar.</p>
+    </div>
+
+    <div class="accordion-container">
+      <div class="accordion-item-lux">
+        <button class="accordion-btn-lux magnetic-btn" type="button">
+          <span>İmplant tedavisi sırasında acı veya ağrı hisseder miyim?</span>
+          <div class="accordion-icon-spin">+</div>
+        </button>
+        <div class="accordion-body-lux">
+          Kesinlikle hayır. İleri dijital lokal anestezi yöntemleriyle operasyon tamamen ağrısız ve konforlu tamamlanır. Tedavi sonrasında hissedilebilecek hafif hassasiyetler basit rutin ağrı kesicilerle kolayca geçer.
+        </div>
+      </div>
+
+      <div class="accordion-item-lux">
+        <button class="accordion-btn-lux magnetic-btn" type="button">
+          <span>İmplant yapıldıktan sonra ne kadar sürede kalıcı dişime kavuşurum?</span>
+          <div class="accordion-icon-spin">+</div>
+        </button>
+        <div class="accordion-body-lux">
+          Titanyum vidanın kemikle hücresel kaynaşması (osseointegrasyon) 2-3 ay sürer. Bu süreçte size özel estetik geçici dişler takılır; sosyal ve iş hayatınız asla kesintiye uğramaz.
+        </div>
+      </div>
+
+      <div class="accordion-item-lux">
+        <button class="accordion-btn-lux magnetic-btn" type="button">
+          <span>Zirkonyum kaplama ve E-Max doğal diş gibi ışık geçirir mi?</span>
+          <div class="accordion-icon-spin">+</div>
+        </button>
+        <div class="accordion-body-lux">
+          Evet. Metal içermeyen ışık geçirgen zirkonyum ve E-Max porselenler doğal diş minenizi birebir taklit eder. Diş eti kenarında morarma yapmaz ve ömür boyu parlaklığını korur.
+        </div>
+      </div>
+
+      <div class="accordion-item-lux">
+        <button class="accordion-btn-lux magnetic-btn" type="button">
+          <span>Diş beyazlatma (Bleaching) işlemi diş mineme zarar verir mi?</span>
+          <div class="accordion-icon-spin">+</div>
+        </button>
+        <div class="accordion-body-lux">
+          Kliniğimizde hekim kontrolünde uygulanan ofis tipi lazer beyazlatma mine dokusuna hiçbir zarar vermez. Tek seansta diş renginiz 4-6 tona kadar güvenle açılır.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. CONTACT COCKPIT & LIVE MAP (ERZİNCAN) -->
+  <section id="iletisim" class="contact-cockpit-section">
+    <div class="contact-grid-wrapper">
+      
+      <!-- Contact Info Card -->
+      <div class="contact-glass-card">
+        <span class="badge-editorial" style="margin-bottom: 1rem;">İLETİŞİM & RANDEVU</span>
+        <h2 class="section-title" style="font-size: 2.3rem; margin-bottom: 1.15rem;">Sağlıklı Bir Gülüş İçin Bizimle İletişime Geçin</h2>
+        <p style="color: var(--text-secondary); line-height: 1.6; margin-bottom: 2rem; font-size: 1rem;">
+          Kliniğimiz Erzincan Merkez'de kolay ulaşılabilir konumda hizmetinizdedir. Aşağıdaki iletişim butonlarına tıklayarak doğrudan arayabilir, WhatsApp'tan yazabilir veya haritada konumu görebilirsiniz.
+        </p>
+
+        <!-- Interactive Clickable Contact Badges -->
+        <div class="contact-cards-list">
+          
+          <!-- Google Maps Location Link -->
+          <a href="https://www.google.com/maps/search/?api=1&query=Özel+Diş+Hekimi+Adem+Gün+Hocabey+Mahallesi+1008+Sokak+TB-10+41+CA+Erzincan" target="_blank" rel="noopener" class="contact-item-card magnetic-btn" title="Google Haritalar'da Kliniğin Yerini Gör">
+            <div class="contact-icon-bubble" style="color: var(--accent-cyan); background: rgba(0,242,254,0.12); border-color: rgba(0,242,254,0.3);">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+            </div>
+            <div class="contact-item-info">
+              <span class="contact-item-label">KLİNİK ADRESİ (HARİTADA AÇ)</span>
+              <span class="contact-item-value">Hocabey Mah. 1008. Sk. TB-10 41 CA, 24000 Merkez / Erzincan</span>
+            </div>
+            <span class="contact-item-arrow">↗</span>
+          </a>
+
+          <!-- Phone Call Link -->
+          <a href="tel:+905333902924" class="contact-item-card magnetic-btn" title="Hemen Telefonla Ara">
+            <div class="contact-icon-bubble" style="color: #00f2fe; background: rgba(0,242,254,0.1); border-color: rgba(0,242,254,0.3);">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+              </svg>
+            </div>
+            <div class="contact-item-info">
+              <span class="contact-item-label">TELEFONLA ARAYIN</span>
+              <span class="contact-item-value" style="color: var(--accent-cyan); font-weight: 800;">0533 390 29 24</span>
+            </div>
+            <span class="contact-item-arrow">↗</span>
+          </a>
+
+          <!-- WhatsApp Chat Link -->
+          <a href="https://wa.me/905333902924?text=Merhaba%20Dt.%20Adem%20G%C3%BCn%20Klini%C4%9Fi,%20tedavi%20ve%20randevu%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener" class="contact-item-card magnetic-btn" title="WhatsApp Sohbeti Başlat">
+            <div class="contact-icon-bubble" style="color: #25d366; background: rgba(37,211,102,0.12); border-color: rgba(37,211,102,0.3);">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm.01 16.67c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.83c.02 4.54-3.68 8.23-8.22 8.23zm4.51-6.17c-.25-.12-1.47-.72-1.7-.81-.23-.08-.39-.12-.56.12-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.14.17-.25.25-.41.08-.17.04-.31-.02-.43s-.56-1.34-.76-1.84c-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.12.17 1.78 2.71 4.3 3.8.6.26 1.07.41 1.43.53.6.19 1.15.16 1.58.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.14-1.18-.06-.11-.23-.17-.47-.29z"/>
+              </svg>
+            </div>
+            <div class="contact-item-info">
+              <span class="contact-item-label">WHATSAPP DANIŞMA HATTI</span>
+              <span class="contact-item-value">0533 390 29 24 (Hızlı Mesaj)</span>
+            </div>
+            <span class="contact-item-arrow">↗</span>
+          </a>
+
+          <!-- Instagram Profile Link -->
+          <a href="https://www.instagram.com/dt.ademgn/" target="_blank" rel="noopener" class="contact-item-card magnetic-btn" title="Instagram Profilini Ziyaret Et">
+            <div class="contact-icon-bubble" style="color: #e1306c; background: rgba(225,48,108,0.12); border-color: rgba(225,48,108,0.3);">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+            </div>
+            <div class="contact-item-info">
+              <span class="contact-item-label">RESMİ INSTAGRAM HESABI</span>
+              <span class="contact-item-value">@dt.ademgn</span>
+            </div>
+            <span class="contact-item-arrow">↗</span>
+          </a>
+
+        </div>
+
+        <div style="margin-top: 2rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+          <a href="tel:+905333902924" class="btn-beam magnetic-btn" style="padding: 0.9rem 1.85rem; display: inline-flex; align-items: center; gap: 0.6rem;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+            </svg>
+            <span>Hemen Telefonla Ara</span>
+          </a>
+          <button class="btn-glass-secondary magnetic-btn" data-modal-open="appointment-modal" style="padding: 0.9rem 1.85rem; display: inline-flex; align-items: center; gap: 0.6rem;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+              <line x1="16" y1="2" x2="16" y2="6"></line>
+              <line x1="8" y1="2" x2="8" y2="6"></line>
+              <line x1="3" y1="10" x2="21" y2="10"></line>
+            </svg>
+            <span>Online Randevu Al</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Live Google Map Viewport with Exact Pin -->
+      <div class="map-viewport-frame tilt-card">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3060.756285278144!2d39.4891151!3d39.7454152!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x406e5d2ff9bc25ef%3A0xbd8b4b1a4574fa07!2zREnFniBIRUrEsU3EsSBBREVNIEdVTg!5e0!3m2!1str!2str!4v1719572948291!5m2!1str!2str" 
+          width="100%" 
+          height="100%" 
+          style="border:0;" 
+          allowfullscreen="" 
+          loading="lazy" 
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Dt. Adem Gün Erzincan Klinik Konumu">
+        </iframe>
+        
+        <!-- Dual Maps Launch Dock (Google Maps + Apple Maps) -->
+        <div class="map-actions-dock">
+          <a href="https://www.google.com/maps/search/?api=1&query=Diş+Hekimi+Adem+Gün+Hocabey+Mahallesi+1008+Sokak+TB-10+41+CA+Erzincan" target="_blank" rel="noopener" class="map-pin-pill-btn map-btn-google magnetic-btn" title="Google Haritalar'da Aç">
+            <span>📍 Google Haritalar ↗</span>
+          </a>
+          <a href="https://maps.apple.com/place?address=1008.+Sk.+41CA%2C+24050+Erzincan+Merkez+Erzincan%2C+T%C3%BCrkiye&coordinate=39.743620%2C39.485460&name=1008.+Sk.+41CA" target="_blank" rel="noopener" class="map-pin-pill-btn map-btn-apple magnetic-btn" title="Apple Haritalar'da Konumu Aç">
+            <span>🍏 Apple Haritalar ↗</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 9. LUXURY FOOTER -->
+  <footer class="luxury-footer">
+    <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 1.5rem;">
+      <img src="assets/logo_transparent.png" alt="Dt. Adem Gün Logo" class="luxury-footer-logo">
+      <p style="color: var(--text-secondary); font-size: 0.95rem; max-width: 540px; line-height: 1.6;">
+        Özel Diş Hekimi Adem Gün Kliniği. Erzincan'da ileri seviye 3D implant cerrahisi, zirkonyum kaplama ve estetik diş hekimliği operasyon merkezi.
+      </p>
+      <div class="luxury-footer-divider">
+        <span>© 2026 Dt. Adem Gün. Tüm hakları saklıdır.</span>
+        <span>Erzincan Estetik & Cerrahi İmplantoloji Kliniği</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- 11. ONLINE APPOINTMENT MODAL DIALOG -->
+  <div id="appointment-modal" class="modal-overlay" aria-hidden="true">
+    <div class="modal-card-lux">
+      
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+        <div>
+          <span class="badge-editorial" style="margin-bottom: 0.35rem;">ONLINE VIP RANDEVU</span>
+          <h3 style="font-family: var(--font-display); font-size: 1.6rem; font-weight: 800; color: var(--text-primary);">Dt. Adem Gün Kliniği</h3>
+        </div>
+        <button data-modal-close style="background: none; border: none; color: var(--text-secondary); font-size: 2rem; cursor: pointer; line-height: 1; transition: color 0.2s;">&times;</button>
+      </div>
+
+      <form id="appointment-form" style="display: flex; flex-direction: column; gap: 1.4rem;">
+        <div>
+          <label style="display: block; font-size: 0.88rem; font-weight: 600; color: var(--text-secondary); margin-bottom: 0.5rem;">Adınız & Soyadınız</label>
+          <input type="text" id="patient-name" required placeholder="Örn: Ahmet Yılmaz" class="form-input-lux">
+        </div>
+
+        <div>
+          <label style="display: block; font-size: 0.88rem; font-weight: 600; color: var(--text-secondary); margin-bottom: 0.5rem;">Telefon Numaranız</label>
+          <input type="tel" id="patient-phone" required placeholder="05XX XXX XX XX" class="form-input-lux">
+        </div>
+
+        <div>
+          <label style="display: block; font-size: 0.88rem; font-weight: 600; color: var(--text-secondary); margin-bottom: 0.5rem;">İlgilendiğiniz Tedavi</label>
+          <select id="patient-service" class="form-input-lux">
+            <option value="İmplant Tedavisi & Cerrahi">İmplant Tedavisi & Çene Cerrahisi</option>
+            <option value="Zirkonyum / E-Max Kaplama">Zirkonyum / E-Max Porselen Kaplama</option>
+            <option value="Hollywood Smile Gülüş Tasarımı">Hollywood Smile Gülüş Tasarımı</option>
+            <option value="Lazerle Diş Beyazlatma">Lazerle Diş Beyazlatma (Bleaching)</option>
+            <option value="Kanal Tedavisi & Estetik Dolgu">Kanal Tedavisi & Estetik Dolgu</option>
+            <option value="Genel Muayene & 3D Kontrol">Genel Muayene & 3D Dijital Kontrol</option>
+          </select>
+        </div>
+
+        <div>
+          <label style="display: block; font-size: 0.88rem; font-weight: 600; color: var(--text-secondary); margin-bottom: 0.5rem;">Randevu Tarihi Tercihi</label>
+          <input type="date" id="patient-date" class="form-input-lux">
+        </div>
+
+        <button type="submit" class="btn-beam magnetic-btn" style="margin-top: 1rem; width: 100%; justify-content: center; padding: 1.15rem;">
+          <span>✦ Randevu Talebini İlet</span>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- 12. FLOATING WHATSAPP PULSE BUTTON -->
+  <a href="https://wa.me/905333902924?text=Merhaba%20Dt.%20Adem%20G%C3%BCn%20Klini%C4%9Fi,%20bilgi%20ve%20randevu%20almak%20istiyorum." target="_blank" class="whatsapp-pulse-btn magnetic-btn" aria-label="WhatsApp İletişim">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2z"/>
+    </svg>
+    <span>WhatsApp Randevu</span>
+  </a>
+
+  <!-- Application Engine Script (Vanilla Standard for Zero CORS issues) -->
+  <script src="app.js"></script>
+</body>
+</html>
