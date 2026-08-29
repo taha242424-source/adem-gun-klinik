@@ -231,6 +231,9 @@ function initInteractiveImplantStage() {
       setActiveStage(idx);
     });
   });
+
+  // Initialize stage 0 immediately so it is never empty
+  setActiveStage(0);
 }
 
 // ==========================================

@@ -425,9 +425,25 @@ body {
   background: var(--card-bg-gradient);
   border: 1px solid var(--border-subtle);
   padding: 0.45rem 1.15rem;
-  border-radius: var(--radius-full);
+  border-radius: 9999px !important;
   margin-bottom: 1.75rem;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.tag-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.4rem 0.85rem;
+  border-radius: 9999px !important;
+  background: var(--card-bg-gradient);
+  border: 1px solid var(--border-subtle);
+  font-family: var(--font-display);
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  white-space: nowrap;
 }
 
 .pulse-dot-green {
@@ -484,7 +500,7 @@ body {
   justify-content: center;
   gap: 0.75rem;
   padding: 1.1rem 2.4rem;
-  border-radius: var(--radius-full);
+  border-radius: 9999px !important;
   font-family: var(--font-display);
   font-size: 1.05rem;
   font-weight: 700;
@@ -523,9 +539,10 @@ body {
 .btn-glass-secondary {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 0.75rem;
   padding: 1.1rem 2.2rem;
-  border-radius: var(--radius-full);
+  border-radius: 9999px !important;
   font-family: var(--font-display);
   font-size: 1.02rem;
   font-weight: 600;
@@ -1688,13 +1705,17 @@ body {
 }
 
 @media (max-width: 768px) {
-  /* Navigation */
+  /* Navigation (Fully Oval) */
   .dental-nav {
     height: 3.8rem;
-    padding: 0 0.75rem;
+    padding: 0 0.85rem;
     top: 0.6rem;
     width: calc(100% - 1.25rem);
-    border-radius: var(--radius-full);
+    border-radius: 9999px !important;
+    background: var(--bg-glass);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
   }
   .nav-brand img {
     height: 30px;
@@ -1703,19 +1724,29 @@ body {
     display: none;
   }
   .nav-action-group {
-    gap: 0.35rem;
+    gap: 0.4rem;
+    align-items: center;
   }
   .theme-toggle-btn {
-    padding: 0.45rem 0.65rem;
-    font-size: 0.75rem;
+    width: 36px;
+    height: 36px;
+    padding: 0 !important;
+    border-radius: 9999px !important;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+    flex-shrink: 0;
   }
   .theme-toggle-text {
     display: none;
   }
   .nav-cta-btn {
-    padding: 0.45rem 0.85rem;
-    font-size: 0.75rem;
+    padding: 0.48rem 1rem !important;
+    font-size: 0.76rem !important;
+    border-radius: 9999px !important;
     white-space: nowrap;
+    flex-shrink: 0;
   }
 
   /* Hero Section */
@@ -1745,23 +1776,53 @@ body {
     justify-content: center;
     padding: 0.95rem 1.5rem;
     font-size: 0.92rem;
+    border-radius: 9999px !important;
   }
   .hero-visual-col {
     max-width: 100%;
-    height: 380px;
+    height: auto;
+  }
+  .hologram-glass-frame {
+    border-radius: 2rem !important;
+    padding: 2.2rem 1.25rem 1.75rem 1.25rem !important;
+    overflow: hidden;
+  }
+  .hologram-avatar-circle {
+    width: 120px;
+    height: 120px;
+    margin: 0.25rem auto 1.1rem auto;
+    border-radius: 50% !important;
+  }
+  .hologram-avatar-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 50% !important;
   }
   .doctor-profile-card {
-    border-radius: 1.75rem;
+    border-radius: 2rem !important;
   }
   .hud-telemetry-badge {
-    position: static;
-    margin-top: 1rem;
-    width: 100%;
-    justify-content: center;
-    box-sizing: border-box;
+    position: static !important;
+    margin: 0.85rem auto 0 auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    justify-content: center !important;
+    box-sizing: border-box !important;
+    border-radius: 9999px !important;
+    padding: 0.65rem 1rem !important;
   }
 
-  /* Mobile Interactive Stage Tabs */
+  /* Accordion FAQ Ovalization */
+  .accordion-item-lux {
+    border-radius: 1.5rem !important;
+    overflow: hidden;
+  }
+  .accordion-icon-box {
+    border-radius: 50% !important;
+  }
+
+  /* Mobile Interactive Stage Tabs (Fully Oval) */
   .mobile-stage-tabs-dock {
     display: flex;
     gap: 0.4rem;
@@ -1781,7 +1842,7 @@ body {
     padding: 0.45rem 0.35rem;
     background: var(--card-bg-gradient);
     border: 1px solid var(--border-subtle);
-    border-radius: 0.75rem;
+    border-radius: 9999px !important;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1837,14 +1898,22 @@ body {
     display: none;
     opacity: 0;
   }
-  .story-card-step.active {
-    display: block;
-    opacity: 1;
+  .story-card-step.active,
+  .story-card-step:first-of-type {
+    display: block !important;
+    opacity: 1 !important;
     border-color: var(--accent-cyan);
     box-shadow: 0 10px 30px var(--accent-cyan-glow);
     padding: 1.25rem;
     border-radius: 1.25rem;
     animation: fadeInSlide 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+  .story-card-step:not(.active) {
+    display: none !important;
+  }
+  .story-card-step.active {
+    display: block !important;
+    opacity: 1 !important;
   }
   .story-card-step h3 {
     font-size: 1.18rem;
@@ -1921,15 +1990,15 @@ body {
     overflow-y: auto;
   }
 
-  /* Floating WhatsApp (Right-Bottom Corner on Mobile) */
+  /* Floating WhatsApp (Left-Bottom Corner on Mobile) */
   .whatsapp-pulse-btn span {
     display: none;
   }
   .whatsapp-pulse-btn {
     padding: 0.85rem;
     bottom: 1.25rem;
-    right: 1.25rem;
-    left: auto;
+    left: 1.25rem;
+    right: auto;
     border-radius: 50%;
     width: 48px;
     height: 48px;
