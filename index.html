@@ -100,7 +100,6 @@
       <a href="#hero" class="nav-link">Ana Sayfa</a>
       <a href="#implant-story-section" class="nav-link">İmplant</a>
       <a href="#tedaviler" class="nav-link">Tedaviler</a>
-      <a href="#akademik" class="nav-link">Akademik</a>
       <a href="#klinik" class="nav-link">Kliniğimiz</a>
       <a href="#iletisim" class="nav-link">İletişim</a>
     </div>
@@ -109,12 +108,12 @@
       <!-- Luxury Dual Theme Switcher (Beige / Dark) -->
       <button id="theme-toggle-btn" class="theme-toggle-btn magnetic-btn" title="Temayı Değiştir (Sıcak Bej / Koyu Lüks)" aria-label="Temayı Değiştir">
         <span class="theme-icon-wrap theme-icon-moon">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
             <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
           </svg>
         </span>
         <span class="theme-icon-wrap theme-icon-sun" style="display: none;">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="12" cy="12" r="5"></circle>
             <line x1="12" y1="1" x2="12" y2="3"></line>
             <line x1="12" y1="21" x2="12" y2="23"></line>
@@ -130,8 +129,9 @@
       </button>
 
       <!-- Online Appointment Trigger -->
-      <button class="btn-beam magnetic-btn" data-modal-open="appointment-modal" style="padding: 0.65rem 1.45rem; font-size: 0.88rem; white-space: nowrap;">
-        <span>✦ Randevu Al</span>
+      <button class="btn-beam magnetic-btn" data-modal-open="appointment-modal" style="padding: 0.65rem 1.45rem; font-size: 0.88rem; white-space: nowrap; display: inline-flex; align-items: center; gap: 0.45rem;">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>
+        <span>Randevu Al</span>
       </button>
     </div>
   </nav>
@@ -157,14 +157,23 @@
       </p>
 
       <div class="hero-reveal hero-cta-group">
-        <button class="btn-beam magnetic-btn" data-modal-open="appointment-modal">
-          <span>📅 Online Randevu Oluştur</span>
+        <button class="btn-beam magnetic-btn" data-modal-open="appointment-modal" style="display: inline-flex; align-items: center; gap: 0.65rem;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+            <line x1="16" y1="2" x2="16" y2="6"></line>
+            <line x1="8" y1="2" x2="8" y2="6"></line>
+            <line x1="3" y1="10" x2="21" y2="10"></line>
+            <path d="M12 14v4M10 16h4"/>
+          </svg>
+          <span>Online Randevu Oluştur</span>
         </button>
-        <a href="https://wa.me/905333902924?text=Merhaba%20Dt.%20Adem%20G%C3%BCn%20Klini%C4%9Fi,%20tedavi%20ve%20randevu%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" class="btn-glass-secondary magnetic-btn">
-          <span>💬 WhatsApp Danışma</span>
+        <a href="https://wa.me/905333902924?text=Merhaba%20Dt.%20Adem%20G%C3%BCn%20Klini%C4%9Fi,%20tedavi%20ve%20randevu%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" class="btn-glass-secondary magnetic-btn" style="display: inline-flex; align-items: center; gap: 0.65rem;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm.01 16.67c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.83c.02 4.54-3.68 8.23-8.22 8.23z"/>
+          </svg>
+          <span>WhatsApp Danışma</span>
         </a>
       </div>
-
 
     </div>
 
@@ -193,7 +202,7 @@
 
         <!-- Floating Telemetry Badges -->
         <div class="hud-telemetry-badge badge-top-left">
-          <span style="display: inline-block; width: 10px; height: 10px; border-radius: 50%; background: var(--accent-cyan); box-shadow: 0 0 10px var(--accent-cyan);"></span>
+          <span style="display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--accent-cyan); box-shadow: 0 0 10px var(--accent-cyan);"></span>
           <div>
             <div style="font-size: 0.72rem; color: var(--text-muted); font-weight: 600;">HASSASİYET</div>
             <div style="font-size: 0.85rem; color: var(--text-primary); font-weight: 700;">±5 Mikron CAD/CAM</div>
@@ -201,7 +210,10 @@
         </div>
 
         <div class="hud-telemetry-badge badge-bottom-right">
-          <span style="font-size: 1.1rem;">💎</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent-cyan)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 3h12l4 6-10 12L2 9l4-6z"/>
+            <path d="M11 3L8 9l4 12 4-12-3-6"/>
+          </svg>
           <div>
             <div style="font-size: 0.72rem; color: var(--text-muted); font-weight: 600;">MATERYAL</div>
             <div style="font-size: 0.85rem; color: var(--text-primary); font-weight: 700;">Medikal Grade-5 Titanyum</div>
@@ -216,7 +228,7 @@
     <div class="section-header-center" style="margin-bottom: 3.5rem;">
       <span class="badge-editorial">CERRAHİ & BİYOMEKANİK PROTOKOL</span>
       <h2 class="section-title">Adım Adım İmplant Tedavi Rehberi</h2>
-      <p class="section-desc">Mikrometre hassasiyetindeki 3D dijital analizden ömür boyu kalıcı doğal gülüşe uzanan 5 aşamalı cerrahi sürecimiz.</p>
+      <p class="section-desc">Mikrometre hassasiyetindeki analizden ömür boyu kalıcı doğal gülüşe uzanan 4 aşamalı cerrahi sürecimiz.</p>
       
       <!-- Medical Ethics & Informational Disclaimer -->
       <div class="medical-disclaimer-note">
@@ -231,7 +243,7 @@
 
     <div class="story-sticky-wrapper">
       
-      <!-- Mobile Interactive Stage Tabs Dock (Visible on Mobile/Tablet) -->
+      <!-- Mobile Interactive Stage Tabs Dock (4 Stages) -->
       <div class="mobile-stage-tabs-dock">
         <button class="mobile-stage-tab active" data-stage="0" type="button">
           <span class="tab-num">01</span>
@@ -239,18 +251,14 @@
         </button>
         <button class="mobile-stage-tab" data-stage="1" type="button">
           <span class="tab-num">02</span>
-          <span class="tab-txt">3D Tarama</span>
+          <span class="tab-txt">İmplant</span>
         </button>
         <button class="mobile-stage-tab" data-stage="2" type="button">
           <span class="tab-num">03</span>
-          <span class="tab-txt">İmplant</span>
+          <span class="tab-txt">Zirkonyum</span>
         </button>
         <button class="mobile-stage-tab" data-stage="3" type="button">
           <span class="tab-num">04</span>
-          <span class="tab-txt">Zirkonyum</span>
-        </button>
-        <button class="mobile-stage-tab" data-stage="4" type="button">
-          <span class="tab-num">05</span>
           <span class="tab-txt">Gülüş</span>
         </button>
       </div>
@@ -293,7 +301,7 @@
         </div>
       </div>
 
-      <!-- Synchronized 5-Step Interactive Story Cards -->
+      <!-- Synchronized 4-Step Interactive Story Cards -->
       <div class="story-text-col">
         <div class="story-card-step active" data-stage="0">
           <div class="step-num-badge">
@@ -309,17 +317,6 @@
         <div class="story-card-step" data-stage="1">
           <div class="step-num-badge">
             <span style="color: var(--accent-cyan);">✦ AŞAMA 02</span>
-            <span>/ ANALİZ</span>
-          </div>
-          <h3>3D Tomografi & Kemik Haritası</h3>
-          <p>
-            Diş kaybı sonrasında oluşan kemik rezorpsiyonu, düşük dozlu 3D tomografi ile mikrometre hassasiyetinde taranır ve implantın yerleşeceği en ideal cerrahi açı belirlenir.
-          </p>
-        </div>
-
-        <div class="story-card-step" data-stage="2">
-          <div class="step-num-badge">
-            <span style="color: var(--accent-cyan);">✦ AŞAMA 03</span>
             <span>/ CERRAHİ</span>
           </div>
           <h3>Titanyum İmplant & Osseointegrasyon</h3>
@@ -328,9 +325,9 @@
           </p>
         </div>
 
-        <div class="story-card-step" data-stage="3">
+        <div class="story-card-step" data-stage="2">
           <div class="step-num-badge">
-            <span style="color: var(--accent-cyan);">✦ AŞAMA 04</span>
+            <span style="color: var(--accent-cyan);">✦ AŞAMA 03</span>
             <span>/ RESTORASYON</span>
           </div>
           <h3>Zirkonyum Abutment & Kuron Montajı</h3>
@@ -339,9 +336,9 @@
           </p>
         </div>
 
-        <div class="story-card-step" data-stage="4">
+        <div class="story-card-step" data-stage="3">
           <div class="step-num-badge">
-            <span style="color: var(--accent-cyan);">✦ AŞAMA 05</span>
+            <span style="color: var(--accent-cyan);">✦ AŞAMA 04</span>
             <span>/ SONUÇ</span>
           </div>
           <h3>Ömür Boyu Çiğneme Gücü & Parlayan Gülüş</h3>
@@ -427,22 +424,23 @@
         </div>
       </div>
 
-      <!-- Card 4: Lazerle Diş Beyazlatma (Span 4) -->
+      <!-- Card 4: Ultrasonik Diş Taşı Temizliği (Span 4) -->
       <div class="bento-col-4 bento-card-lux tilt-card">
         <div>
           <div class="bento-icon-box" style="background: rgba(16, 185, 129, 0.12); color: #34d399; border-color: rgba(16, 185, 129, 0.3);">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+              <path d="M12 2v20M8 5h8M7 9h10M8 13h8"/>
             </svg>
           </div>
-          <h3 class="bento-card-title">Lazerle Diş Beyazlatma (Bleaching)</h3>
+          <h3 class="bento-card-title">Diş Taşı Temizliği & Polisaj</h3>
           <p class="bento-card-text">
-            Tek seansta güvenli, diş minesine zarar vermeyen ve hassasiyetsiz klinikte ofis tipi beyazlatma ile 4-6 tona kadar kalıcı ışıltı.
+            Diş ve diş eti sağlığını korumak amacıyla mine dokusuna zarar vermeden ultrasonik teknoloji ve subgingival küretajla ağrısız profesyonel temizlik.
           </p>
         </div>
         <div class="tag-cloud">
-          <span class="tag-pill">✦ Tek Seans</span>
-          <span class="tag-pill">✦ Sıfır Hassasiyet</span>
+          <span class="tag-pill">✦ Ultrasonik Detertraj</span>
+          <span class="tag-pill">✦ Subgingival Küretaj</span>
+          <span class="tag-pill">✦ Parlatıcı Polisaj</span>
         </div>
       </div>
 
@@ -462,55 +460,6 @@
         <div class="tag-cloud">
           <span class="tag-pill">✦ Ağrısız Endodonti</span>
           <span class="tag-pill">✦ Estetik Bonding</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 5. EDITORIAL CONGRESS & SCIENTIFIC AUTHORITY -->
-  <section id="akademik" class="congress-section">
-    <div style="max-width: 1400px; margin: 0 auto;">
-      <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 4rem; flex-wrap: wrap; gap: 2rem;">
-        <div>
-          <span class="badge-editorial">AKADEMİK VE BİLİMSEL OTORİTE</span>
-          <h2 class="section-title">Kongreler & Bilimsel Vaka Sunumları</h2>
-        </div>
-        <p class="section-desc" style="max-width: 520px;">
-          Dt. Adem Gün, Türkiye'nin önde gelen implantoloji ve estetik diş hekimliği kongrelerinde bilimsel araştırmaları ve vaka sunumlarıyla klinik tecrübesini meslektaşlarıyla paylaşmaktadır.
-        </p>
-      </div>
-
-      <div class="congress-grid">
-        <!-- Congress 1: NucleOSS Zirvede -->
-        <div class="congress-card-editorial tilt-card">
-          <div class="congress-media-frame">
-            <img src="assets/1000520231.JPEG" alt="Dt. Adem Gün NucleOSS Zirvede Sunumu" loading="lazy" style="object-position: center bottom;">
-            <span class="congress-editorial-badge">Ulusal İmplant Zirvesi / Antalya</span>
-          </div>
-          <div class="congress-text-body">
-            <h3 style="font-family: var(--font-display); font-size: 1.45rem; font-weight: 700; margin-bottom: 0.75rem; color: var(--text-primary);">
-              NucleOSS ZİRVEDE — Maksiller Sinüs & İmplant Cerrahisi
-            </h3>
-            <p style="color: var(--text-secondary); font-size: 0.98rem; line-height: 1.65;">
-              Üst çene arka bölgedeki anatomik varyasyonlar (sinüs septaları) ve ileri seviye implant cerrahisinde güvenli cerrahi protokollerin sunulduğu bilimsel oturum.
-            </p>
-          </div>
-        </div>
-
-        <!-- Congress 2: Restorative & Glaze -->
-        <div class="congress-card-editorial tilt-card">
-          <div class="congress-media-frame">
-            <img src="assets/1000537103.JPG" alt="Dt. Adem Gün Restoratif & Glaze Kongresi" loading="lazy">
-            <span class="congress-editorial-badge">Estetik & Restoratif Sempozyumu</span>
-          </div>
-          <div class="congress-text-body">
-            <h3 style="font-family: var(--font-display); font-size: 1.45rem; font-weight: 700; margin-bottom: 0.75rem; color: var(--text-primary);">
-              Mekanik Polisaj, Glaze & Yüzey Bütünlüğü
-            </h3>
-            <p style="color: var(--text-secondary); font-size: 0.98rem; line-height: 1.65;">
-              Zirkonyum ve seramik restorasyonların uzun ömürlülüğü, mekanik parlatma teknikleri ve yüzey mikro-morfolojisinin klinik başarısı üzerine bilimsel vaka sunumu.
-            </p>
-          </div>
         </div>
       </div>
     </div>
@@ -620,16 +569,6 @@
         </button>
         <div class="accordion-body-lux">
           Evet. Metal içermeyen ışık geçirgen zirkonyum ve E-Max porselenler doğal diş minenizi birebir taklit eder. Diş eti kenarında morarma yapmaz ve ömür boyu parlaklığını korur.
-        </div>
-      </div>
-
-      <div class="accordion-item-lux">
-        <button class="accordion-btn-lux magnetic-btn" type="button">
-          <span>Diş beyazlatma (Bleaching) işlemi diş mineme zarar verir mi?</span>
-          <div class="accordion-icon-spin">+</div>
-        </button>
-        <div class="accordion-body-lux">
-          Kliniğimizde hekim kontrolünde uygulanan ofis tipi lazer beyazlatma mine dokusuna hiçbir zarar vermez. Tek seansta diş renginiz 4-6 tona kadar güvenle açılır.
         </div>
       </div>
     </div>
@@ -746,10 +685,12 @@
         <!-- Dual Maps Launch Dock (Google Maps + Apple Maps) -->
         <div class="map-actions-dock">
           <a href="https://www.google.com/maps/search/?api=1&query=Diş+Hekimi+Adem+Gün+Hocabey+Mahallesi+1008+Sokak+TB-10+41+CA+Erzincan" target="_blank" rel="noopener" class="map-pin-pill-btn map-btn-google magnetic-btn" title="Google Haritalar'da Aç">
-            <span>📍 Google Haritalar ↗</span>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>Google Haritalar ↗</span>
           </a>
           <a href="https://maps.apple.com/place?address=1008.+Sk.+41CA%2C+24050+Erzincan+Merkez+Erzincan%2C+T%C3%BCrkiye&coordinate=39.743620%2C39.485460&name=1008.+Sk.+41CA" target="_blank" rel="noopener" class="map-pin-pill-btn map-btn-apple magnetic-btn" title="Apple Haritalar'da Konumu Aç">
-            <span>🍏 Apple Haritalar ↗</span>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.87c.66-.8 1.11-1.92.99-3.04-.96.04-2.12.64-2.8 1.44-.6.69-1.12 1.83-.98 2.92 1.07.08 2.14-.54 2.79-1.32z"/></svg>
+            <span>Apple Haritalar ↗</span>
           </a>
         </div>
       </div>
@@ -761,7 +702,7 @@
   <footer class="luxury-footer">
     <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 1.5rem;">
       <img src="assets/logo_transparent.png" alt="Dt. Adem Gün Logo" class="luxury-footer-logo">
-      <p style="color: var(--text-secondary); font-size: 0.95rem; max-width: 540px; line-height: 1.6;">
+      <p style="color: var(--text-secondary); font-size: 0.95rem; max-width: 540px; line-height: 1.6; text-align: center;">
         Özel Diş Hekimi Adem Gün Kliniği. Erzincan'da ileri seviye 3D implant cerrahisi, zirkonyum kaplama ve estetik diş hekimliği operasyon merkezi.
       </p>
       <div class="luxury-footer-divider">
@@ -780,7 +721,12 @@
           <span class="badge-editorial" style="margin-bottom: 0.35rem;">ONLINE VIP RANDEVU</span>
           <h3 style="font-family: var(--font-display); font-size: 1.6rem; font-weight: 800; color: var(--text-primary);">Dt. Adem Gün Kliniği</h3>
         </div>
-        <button data-modal-close style="background: none; border: none; color: var(--text-secondary); font-size: 2rem; cursor: pointer; line-height: 1; transition: color 0.2s;">&times;</button>
+        <button data-modal-close style="background: var(--bg-glass-hover); border: 1px solid var(--border-subtle); color: var(--text-secondary); width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.2s;" aria-label="Kapat">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
       </div>
 
       <form id="appointment-form" style="display: flex; flex-direction: column; gap: 1.4rem;">
@@ -800,7 +746,7 @@
             <option value="İmplant Tedavisi & Cerrahi">İmplant Tedavisi & Çene Cerrahisi</option>
             <option value="Zirkonyum / E-Max Kaplama">Zirkonyum / E-Max Porselen Kaplama</option>
             <option value="Hollywood Smile Gülüş Tasarımı">Hollywood Smile Gülüş Tasarımı</option>
-            <option value="Lazerle Diş Beyazlatma">Lazerle Diş Beyazlatma (Bleaching)</option>
+            <option value="Diş Taşı Temizliği & Polisaj">Diş Taşı Temizliği & Polisaj</option>
             <option value="Kanal Tedavisi & Estetik Dolgu">Kanal Tedavisi & Estetik Dolgu</option>
             <option value="Genel Muayene & 3D Kontrol">Genel Muayene & 3D Dijital Kontrol</option>
           </select>
@@ -811,8 +757,9 @@
           <input type="date" id="patient-date" class="form-input-lux">
         </div>
 
-        <button type="submit" class="btn-beam magnetic-btn" style="margin-top: 1rem; width: 100%; justify-content: center; padding: 1.15rem;">
-          <span>✦ Randevu Talebini İlet</span>
+        <button type="submit" class="btn-beam magnetic-btn" style="margin-top: 1rem; width: 100%; justify-content: center; padding: 1.15rem; display: inline-flex; align-items: center; gap: 0.5rem;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>
+          <span>Randevu Talebini İlet</span>
         </button>
       </form>
     </div>

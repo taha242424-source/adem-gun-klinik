@@ -2029,3 +2029,24 @@ body {
     width: calc(100% - 1.5rem);
   }
 }
+
+/* ==========================================================================
+   10. HIDE NETLIFY INJECTED FEEDBACK DRAWER & BADGE
+   ========================================================================== */
+
+#netlify-drawer,
+.netlify-drawer,
+[data-netlify-drawer],
+[id*="netlify-drawer"],
+iframe[src*="netlify"],
+div[class*="netlify-feedback"],
+div[class*="netlify-drawer"] {
+  display: none !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  visibility: hidden !important;
+  width: 0 !important;
+  height: 0 !important;
+  position: absolute !important;
+  left: -9999px !important;
+}
