@@ -116,12 +116,20 @@ const ComponentsEngine = {
   },
 
   initAccordions(itemSelector = '.accordion-item-lux') {
-    document.querySelectorAll(itemSelector).forEach((item) => {
+    const allItems = document.querySelectorAll(itemSelector);
+    allItems.forEach((item) => {
       const btn = item.querySelector('.accordion-btn-lux') || item.querySelector('.accordion-header') || item;
       btn.addEventListener('click', () => {
         const isActive = item.classList.contains('active');
-        document.querySelectorAll(itemSelector).forEach((other) => other.classList.remove('active'));
-        if (!isActive) item.classList.add('active');
+        allItems.forEach((other) => {
+          other.classList.remove('active');
+          const otherBtn = other.querySelector('.accordion-btn-lux') || other.querySelector('.accordion-header');
+          if (otherBtn) otherBtn.setAttribute('aria-expanded', 'false');
+        });
+        if (!isActive) {
+          item.classList.add('active');
+          btn.setAttribute('aria-expanded', 'true');
+        }
       });
     });
   }
@@ -168,33 +176,39 @@ function initInteractiveImplantStage() {
 
   const titleEl = document.getElementById('stage-hud-step-title');
   const telemetryEl = document.getElementById('stage-hud-telemetry');
-  const imgEl = document.getElementById('stage-display-img');
+  const stageImages = document.querySelectorAll('.stage-layer-img');
+  const fallbackImg = document.getElementById('stage-display-img');
   const materialEl = document.getElementById('stage-footer-material');
   const goalEl = document.getElementById('stage-footer-goal');
   const stepCards = document.querySelectorAll('.story-card-step');
   const mobileTabs = document.querySelectorAll('.mobile-stage-tab');
 
-  if (!imgEl || stepCards.length === 0) return;
+  if ((stageImages.length === 0 && !fallbackImg) || stepCards.length === 0) return;
+
+  // Preload all stage images into browser cache immediately for 0ms transitions
+  stageData.forEach((item) => {
+    const preload = new Image();
+    preload.src = item.imgSrc;
+  });
 
   function setActiveStage(index) {
     const data = stageData[index];
     if (!data) return;
 
-    // Visual transition
-    imgEl.style.opacity = '0.3';
-    imgEl.style.transform = 'scale(0.96)';
+    // Instant 0ms GPU Crossfade via stacked layers
+    if (stageImages.length > 0) {
+      stageImages.forEach((img, idx) => {
+        img.classList.toggle('active', idx === index);
+      });
+    } else if (fallbackImg) {
+      fallbackImg.src = data.imgSrc;
+      fallbackImg.alt = data.imgAlt;
+    }
 
-    setTimeout(() => {
-      imgEl.src = data.imgSrc;
-      imgEl.alt = data.imgAlt;
-      if (titleEl) titleEl.textContent = data.stepTitle;
-      if (telemetryEl) telemetryEl.textContent = data.telemetry;
-      if (materialEl) materialEl.textContent = data.material;
-      if (goalEl) goalEl.textContent = data.goal;
-
-      imgEl.style.opacity = '1';
-      imgEl.style.transform = 'scale(1)';
-    }, 150);
+    if (titleEl) titleEl.textContent = data.stepTitle;
+    if (telemetryEl) telemetryEl.textContent = data.telemetry;
+    if (materialEl) materialEl.textContent = data.material;
+    if (goalEl) goalEl.textContent = data.goal;
 
     stepCards.forEach((card, idx) => {
       card.classList.toggle('active', idx === index);

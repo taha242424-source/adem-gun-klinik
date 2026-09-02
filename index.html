@@ -33,6 +33,12 @@
   <!-- Main Stylesheet -->
   <link rel="stylesheet" href="style.css">
 
+  <!-- Preload Stage Interactive Visuals for 0ms Instant Transition -->
+  <link rel="preload" as="image" href="assets/stage1_natural_tooth.jpg">
+  <link rel="preload" as="image" href="assets/stage3_titanium_implant.jpg">
+  <link rel="preload" as="image" href="assets/stage4_zirconia_crown.jpg">
+  <link rel="preload" as="image" href="assets/stage5_perfect_smile.jpg">
+
   <!-- Immediate Theme Engine (Always Starts in Beige Mode) -->
   <script>
     (function() {
@@ -277,9 +283,12 @@
             </div>
           </div>
 
-          <!-- Dynamic Active Stage Image Display -->
+          <!-- Dynamic Active Stage Image Display (Stacked Zero-Latency Layers) -->
           <div class="stage-image-display-wrap">
-            <img id="stage-display-img" src="assets/stage1_natural_tooth.jpg" alt="Aşama 01: Doğal Diş Biyomekaniği" class="stage-display-image">
+            <img src="assets/stage1_natural_tooth.jpg" alt="Aşama 01: Doğal Diş Biyomekaniği & Mine" class="stage-layer-img active" data-stage="0" fetchpriority="high">
+            <img src="assets/stage3_titanium_implant.jpg" alt="Aşama 02: Titanyum İmplant & Osseointegrasyon" class="stage-layer-img" data-stage="1" loading="eager">
+            <img src="assets/stage4_zirconia_crown.jpg" alt="Aşama 03: Zirkonyum Abutment & Kuron Montajı" class="stage-layer-img" data-stage="2" loading="eager">
+            <img src="assets/stage5_perfect_smile.jpg" alt="Aşama 04: Ömür Boyu Çiğneme Gücü & Parlayan Gülüş" class="stage-layer-img" data-stage="3" loading="eager">
             <div class="stage-image-overlay-glow"></div>
             <div class="hud-reticle-tl"></div>
             <div class="hud-reticle-tr"></div>
@@ -543,9 +552,14 @@
 
     <div class="accordion-container">
       <div class="accordion-item-lux">
-        <button class="accordion-btn-lux magnetic-btn" type="button">
+        <button class="accordion-btn-lux magnetic-btn" type="button" aria-expanded="false">
           <span>İmplant tedavisi sırasında acı veya ağrı hisseder miyim?</span>
-          <div class="accordion-icon-spin">+</div>
+          <span class="accordion-icon-spin" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" fill="none">
+              <line x1="12" y1="5" x2="12" y2="19"></line>
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+            </svg>
+          </span>
         </button>
         <div class="accordion-body-lux">
           Kesinlikle hayır. İleri dijital lokal anestezi yöntemleriyle operasyon tamamen ağrısız ve konforlu tamamlanır. Tedavi sonrasında hissedilebilecek hafif hassasiyetler basit rutin ağrı kesicilerle kolayca geçer.
@@ -553,9 +567,14 @@
       </div>
 
       <div class="accordion-item-lux">
-        <button class="accordion-btn-lux magnetic-btn" type="button">
+        <button class="accordion-btn-lux magnetic-btn" type="button" aria-expanded="false">
           <span>İmplant yapıldıktan sonra ne kadar sürede kalıcı dişime kavuşurum?</span>
-          <div class="accordion-icon-spin">+</div>
+          <span class="accordion-icon-spin" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" fill="none">
+              <line x1="12" y1="5" x2="12" y2="19"></line>
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+            </svg>
+          </span>
         </button>
         <div class="accordion-body-lux">
           Titanyum vidanın kemikle hücresel kaynaşması (osseointegrasyon) 2-3 ay sürer. Bu süreçte size özel estetik geçici dişler takılır; sosyal ve iş hayatınız asla kesintiye uğramaz.
@@ -563,9 +582,14 @@
       </div>
 
       <div class="accordion-item-lux">
-        <button class="accordion-btn-lux magnetic-btn" type="button">
+        <button class="accordion-btn-lux magnetic-btn" type="button" aria-expanded="false">
           <span>Zirkonyum kaplama ve E-Max doğal diş gibi ışık geçirir mi?</span>
-          <div class="accordion-icon-spin">+</div>
+          <span class="accordion-icon-spin" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" fill="none">
+              <line x1="12" y1="5" x2="12" y2="19"></line>
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+            </svg>
+          </span>
         </button>
         <div class="accordion-body-lux">
           Evet. Metal içermeyen ışık geçirgen zirkonyum ve E-Max porselenler doğal diş minenizi birebir taklit eder. Diş eti kenarında morarma yapmaz ve ömür boyu parlaklığını korur.
